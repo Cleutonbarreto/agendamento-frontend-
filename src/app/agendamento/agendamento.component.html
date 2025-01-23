@@ -1,0 +1,207 @@
+<div class="agendamento-entrega">
+  <h2>Agendamento de Entrega</h2>
+  
+  <!-- Formulário de agendamento -->
+  <form #agendamentoForm="ngForm" (ngSubmit)="salvarAgendamento(agendamentoForm)">
+    
+    <div class="form-row">
+      <!-- Fornecedor -->
+      <div class="form-group col-12 col-md-6">
+        <label for="fornecedor">Fornecedor</label>
+        <input 
+          type="text" 
+          id="fornecedor" 
+          class="form-control" 
+          name="fornecedor" 
+          ngModel 
+          [ngModel]="agendamentoSelecionado?.fornecedor"
+          required 
+          placeholder="Digite o nome do fornecedor">
+      </div>
+  
+      <!-- Produtos -->
+      <div class="form-group col-12 col-md-6">
+        <label for="produtos">Produtos</label>
+        <input 
+          type="text" 
+          id="produtos" 
+          class="form-control" 
+          name="produtos" 
+          ngModel 
+          [ngModel]="agendamentoSelecionado?.produtos"
+          required 
+          placeholder="Digite os produtos">
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <!-- Data -->
+      <div class="form-group col-12 col-md-6">
+        <label for="data">Data</label>
+        <input 
+          type="date" 
+          id="data" 
+          class="form-control" 
+          name="data" 
+          ngModel 
+          [ngModel]="agendamentoSelecionado?.data"
+          required>
+      </div>
+  
+      <!-- Hora -->
+      <div class="form-group col-12 col-md-6">
+        <label for="hora">Hora</label>
+        <input 
+          type="time" 
+          id="hora" 
+          class="form-control" 
+          name="hora" 
+          ngModel 
+          [ngModel]="agendamentoSelecionado?.hora"
+          required>
+      </div>
+    </div>
+  
+    <div class="form-row">
+      <!-- Quantidade -->
+      <div class="form-group col-12 col-md-6">
+        <label for="notaFiscal">Nota Fiscal</label>
+        <input 
+          type="number" 
+          id="notaFiscal" 
+          class="form-control" 
+          name="notaFiscal" 
+          ngModel 
+          [ngModel]="agendamentoSelecionado?.notaFiscal"
+          required 
+          placeholder="Nota Fiscal">
+      </div>
+  
+      <!-- Volumes -->
+      <div class="form-group col-12 col-md-6">
+        <label for="quantidadeVolumes">Volumes</label>
+        <input 
+          type="number" 
+          id="quantidadeVolumes" 
+          class="form-control" 
+          name="quantidadeVolumes" 
+          ngModel 
+          [ngModel]="agendamentoSelecionado?.quantidadeVolumes"
+          required 
+          placeholder="Quantidade de Volumes">
+      </div>
+
+
+      </div>
+
+      <div class="form-row">
+        <!-- Status -->
+        <div class="form-group col-12 col-md-6">
+          <label for="notaFiscal">Status</label>
+          <input 
+            type="number" 
+            id="notaFiscal" 
+            class="form-control" 
+            name="notaFiscal" 
+            ngModel 
+            [ngModel]="agendamentoSelecionado?.notaFiscal"
+            required 
+            placeholder="Status">
+        </div>
+    
+        <!-- Volumes -->
+        <div class="form-group col-12 col-md-6">
+          <label for="quantidadeVolumes">Finalizado</label>
+          <input 
+            type="number" 
+            id="quantidadeVolumes" 
+            class="form-control" 
+            name="quantidadeVolumes" 
+            ngModel 
+            [ngModel]="agendamentoSelecionado?.quantidadeVolumes"
+            required 
+            placeholder="Finalizado">
+        </div>
+
+
+    </div>
+  
+    <!-- Botões -->
+    <div class="form-group">
+      <button 
+        type="submit" 
+        class="btn btn-primary" 
+        [disabled]="!agendamentoForm.valid">
+        Salvar
+      </button>
+      
+      <button 
+        type="button" 
+        class="btn btn-secondary" 
+        (click)="atualizarLista()">
+        Atualizar Lista
+      </button>
+      
+      <button 
+        type="button" 
+        class="btn btn-danger" 
+        (click)="cancelar()">
+        Cancelar
+      </button>
+      
+      <button 
+        type="button" 
+        class="btn btn-warning" 
+        (click)="excluir()">
+        Excluir
+      </button>
+    </div>
+  
+  </form>
+
+  <!-- Lista de Agendamentos -->
+  <div class="agendamentos-lista">
+    <h2>Lista de Agendamentos</h2>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th id="idHeader" scope="col">Id</th>
+          <th id="fornecedorHeader" scope="col">Fornecedor</th>
+          <th id="produtosHeader" scope="col">Produtos</th>
+          <th id="dataHeader" scope="col">Agendamento</th>
+          <th id="horaHeader" scope="col">Hora</th>
+          <th id="notaFiscalHeader" scope="col">Nota Fiscal</th>
+          <th id="quantidadeVolumesHeader" scope="col">Volumes</th>
+          <th id="statusHeader" scope="col">Status</th>
+          <th id="finalizadoHeader" scope="col">Finalizado</th>
+          <th id="editarHeader" scope="col">Reagendar</th>
+
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let agendamento of agendamentos">
+          <td headers="idHeader">{{agendamento.id}}</td>
+          <td headers="fornecedorHeader">{{agendamento.fornecedor}}</td>
+          <td headers="produtosHeader">{{agendamento.produtos}}</td>
+          <td headers="dataHeader">{{agendamento.data | date: 'd MMM yyyy' }}</td>
+          <td headers="horaHeader">{{agendamento.hora }}</td>
+          <td headers="notaFiscalHeader">{{agendamento.notaFiscal}}</td>
+          <td headers="quantidadeVolumesHeader">{{agendamento.quantidadeVolumes}}</td>
+          <td headers="statusHeader">{{agendamento.status}}</td>
+          <td headers="finalizadoHeader">{{agendamento.finalizado | date: 'd MMM'}}</td>
+          <td>
+            <!-- Ícone de Editar -->
+            <button *ngIf="agendamento.id != null" (click)="editAgendamento(agendamento.id)" class="btn btn-warning btn-sm">
+              <i class="fas fa-edit"></i> <!-- Ícone de edição -->
+            </button>
+        </td>
+
+        
+    
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+</div>

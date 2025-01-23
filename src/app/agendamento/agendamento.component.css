@@ -1,0 +1,197 @@
+/* Estilo geral para o container */
+.agendamento-entrega {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Fundo claro */
+  border: 1px solid #ddd; /* Borda sutil */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Título */
+.agendamento-entrega h2 {
+  text-align: center;
+  color: #333; /* Cor do texto */
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.agendamento-entrega h3 {
+  color: #333;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+/* Estilo dos campos do formulário */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 15px; /* Espaçamento entre os campos */
+}
+
+.form-group {
+  flex: 1 1 calc(50% - 15px); /* Para criar a divisão entre os campos de 50% */
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px; /* Espaçamento abaixo do label */
+  color: #555; /* Cor do texto do label */
+}
+
+.form-control {
+  width: 100%; /* Largura total */
+  padding: 10px; /* Espaçamento interno */
+  font-size: 14px; /* Tamanho da fonte */
+  border: 1px solid #ccc; /* Borda padrão */
+  border-radius: 4px; /* Cantos arredondados */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Estilo ao focar no campo */
+.form-control:focus {
+  border-color: #007bff; /* Azul ao focar */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Realce ao focar */
+  outline: none;
+}
+
+/* Botões */
+button {
+  margin-right: 10px; /* Espaçamento entre botões */
+  padding: 10px 20px; /* Espaçamento interno */
+  font-size: 14px;
+  border-radius: 4px; /* Cantos arredondados */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:disabled {
+  background-color: #ccc; /* Botão desativado */
+  cursor: not-allowed;
+}
+
+/* Botões específicos */
+.btn-primary {
+  background-color: #007bff; /* Azul */
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3; /* Azul mais escuro */
+}
+
+.btn-secondary {
+  background-color: #6c757d; /* Cinza escuro */
+  color: white;
+  border: none;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268; /* Cinza mais escuro */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Vermelho */
+  color: white;
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #bd2130; /* Vermelho mais escuro */
+}
+
+.btn-warning {
+  background-color: #ffc107; /* Amarelo */
+  color: white;
+  border: none;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800; /* Amarelo mais escuro */
+}
+
+/* Estilo do botão ao clicar */
+button:active {
+  transform: scale(0.98); /* Leve redução ao clicar */
+}
+
+/* Ajuste para responsividade */
+@media (max-width: 768px) {
+  .agendamento-entrega {
+    padding: 15px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%; /* Campos de formulário ocupando toda a largura */
+  }
+
+  button {
+    width: 100%; /* Botões ocupam a largura total */
+    margin-bottom: 10px; /* Espaçamento vertical entre botões */
+  }
+}
+
+/* Estilo da tabela */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #27ae60; /* Verde da logo */
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
+}
+
+/* Estilo para o dropdown */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  width: 100%;
+  text-align: left;
+}
+
+.dropdown-menu {
+  min-width: 100%;
+  border-radius: 0;
+}
+
+.dropdown-item {
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+/* Estilo para o botão de dropdown */
+.dropdown-toggle::after {
+  content: '\f107'; /* Ícone de seta para baixo */
+  font-family: 'FontAwesome';  /* Use a fonte do FontAwesome */
+  padding-left: 10px;  /* Deixa um pequeno espaço após o texto */
+  display: inline-block; /* Garantir que o ícone seja exibido corretamente */
+  vertical-align: middle; /* Alinha o ícone com o texto */
+}
+

@@ -1,0 +1,76 @@
+/* Estilo geral para o container da lista de agendamentos */
+.agendamentos-lista {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #f9f9f9; /* Fundo claro */
+    border: 1px solid #ddd; /* Borda sutil */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  }
+  
+  /* Título */
+  .agendamentos-lista h2 {
+    text-align: center;
+    color: #333; /* Cor do texto */
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo da tabela */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 2rem;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  /* Cabeçalhos da tabela */
+  th {
+    background-color: #27ae60; /* Verde */
+    color: white;
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  /* Linhas da tabela */
+  td {
+    background-color: #f9f9f9;
+    text-align: center;
+    font-size: 14px;
+  }
+  
+  /* Estilo de linhas alternadas (para melhorar a legibilidade) */
+  tr:nth-child(even) td {
+    background-color: #f1f1f1;
+  }
+  
+  /* Efeito ao passar o mouse sobre uma linha */
+  tr:hover {
+    background-color: #e0f7fa;
+    cursor: pointer;
+  }
+  
+  /* Responsividade: Ajustar o layout para telas menores */
+  @media (max-width: 768px) {
+    .agendamentos-lista {
+      padding: 15px;
+    }
+  
+    table, th, td {
+      font-size: 12px;
+    }
+  
+    th, td {
+      padding: 8px;
+    }
+  }
+  

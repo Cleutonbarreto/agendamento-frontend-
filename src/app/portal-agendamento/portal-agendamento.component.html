@@ -1,0 +1,27 @@
+<div class="agendamentos-lista">
+    <h2>Agendamento de Entregas</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th id="idHeader" scope="col">Id</th>
+                <th id="fornecedorHeader" scope="col">Fornecedor</th>
+                <th id="produtosHeader" scope="col">Produtos</th>
+                <th id="dataHeader" scope="col">Agendamento</th>
+                <th id="horaHeader" scope="col">Hora</th>
+                <th id="notaFiscalHeader" scope="col">Nota Fiscal</th>
+                <th id="quantidadeVolumesHeader" scope="col">Volumes</th>
+              </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let portalAgendamentos of portalAgendamentos">
+                <td headers="idHeader">{{portalAgendamentos.id}}</td>
+                <td headers="fornecedorHeader">{{portalAgendamentos.fornecedor}}</td>
+                <td headers="produtosHeader">{{portalAgendamentos.produtos}}</td>
+                <td headers="dataHeader">{{portalAgendamentos.data | date: 'd MMM yyyy' }}</td>
+                <td headers="horaHeader">{{portalAgendamentos.hora }}</td>
+                <td headers="notaFiscalHeader">{{portalAgendamentos.notaFiscal}}</td>
+                <td headers="quantidadeVolumesHeader">{{portalAgendamentos.quantidadeVolumes}}</td>
+      
+        </tbody>
+    </table>
+</div>
