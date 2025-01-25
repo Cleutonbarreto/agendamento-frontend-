@@ -1,6 +1,54 @@
+/* Estilo para a logo */
+.logo {
+  max-width: 80px; /* Ajuste o tamanho da logo */
+  height: auto; /* Mantém a proporção da imagem */
+  margin-right: 8px; /* Espaço entre a logo e a palavra "Menu" */
+  vertical-align: middle; /* Alinha a logo com o texto */
+}
+
+/* Estilo geral para o menu */
+.menu {
+  max-width: 1000px; /* Mesma largura máxima do formulário */
+  margin: 0 auto 0px auto; /* Centralizado com espaçamento inferior */
+  padding: 5px 20px; /* Ajuste de espaçamento interno */
+  background-color: #ffffff; /* Fundo branco */
+  border: 1px solid #ddd; /* Borda sutil */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Ajuste do título do menu */
+.navbar-brand {
+  font-size: 20px; /* Tamanho do texto do título */
+  font-weight: bold;
+  color: #333; /* Cor similar ao formulário */
+}
+
+/* Estilo para os links do menu */
+.nav-link {
+  color: #555;
+  font-size: 16px; /* Tamanho consistente com o formulário */
+  margin-right: 10px;
+}
+
+.nav-link:hover {
+  color: #007bff; /* Cor ao passar o mouse */
+  text-decoration: none;
+}
+
+/* Botão do menu para dispositivos menores */
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-color: #333; /* Ícone em cor contrastante */
+}
+
+
 /* Estilo geral para o container */
 .agendamento-entrega {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 30px auto;
   padding: 20px;
   background-color: #f9f9f9; /* Fundo claro */
@@ -44,8 +92,8 @@
 
 .form-control {
   width: 100%; /* Largura total */
-  padding: 10px; /* Espaçamento interno */
-  font-size: 14px; /* Tamanho da fonte */
+  padding: 6px; /* Espaçamento interno */
+  font-size: 16px; /* Tamanho da fonte */
   border: 1px solid #ccc; /* Borda padrão */
   border-radius: 4px; /* Cantos arredondados */
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -193,5 +241,35 @@ td {
   padding-left: 10px;  /* Deixa um pequeno espaço após o texto */
   display: inline-block; /* Garantir que o ícone seja exibido corretamente */
   vertical-align: middle; /* Alinha o ícone com o texto */
+}
+
+/* Adicionando um container responsivo para a tabela */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto; /* Adiciona barra de rolagem horizontal se necessário */
+  margin-top: 1rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #27ae60; /* Verde da logo */
+  color: white;
+}
+
+td {
+  background-color: #f9f9f9;
 }
 
