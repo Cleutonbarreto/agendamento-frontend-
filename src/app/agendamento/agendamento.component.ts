@@ -5,18 +5,20 @@ import { Agendamento, StatusAgendamento } from './agendamento';
 import { AgendamentoService } from '../servico/agendamento.service';
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-agendamento',
   standalone: true,
+  templateUrl: './agendamento.component.html',
+  styleUrls: ['./agendamento.component.css'],
   imports: [
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  templateUrl: './agendamento.component.html',
-  styleUrls: ['./agendamento.component.css']
 })
 export class AgendamentoComponent {
   agendamentos: Agendamento[] = [];

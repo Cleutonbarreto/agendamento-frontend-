@@ -4,17 +4,18 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { PortalAgendamento } from './portal-agendamento';
 import { PortalAgendamentoService } from '../servico/portal-agendamento.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-portal-agendamento',
   standalone: true,
-  imports: [
+  templateUrl: './portal-agendamento.component.html',
+  styleUrls: ['./portal-agendamento.component.css'],  imports: [
     FormsModule,
     HttpClientModule,
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
-  templateUrl: './portal-agendamento.component.html',
-  styleUrls: ['./portal-agendamento.component.css']
 })
 export class PortalAgendamentoComponent {
   portalAgendamentos: PortalAgendamento[] = [];
@@ -26,9 +27,8 @@ export class PortalAgendamentoComponent {
   // Buscar todos os registros
     getAll(): void {
       this.portalAgendamentoService.getAll()
-        .subscribe((portalAgendamentoList: PortalAgendamento[]) => this.portalAgendamentos = portalAgendamentoList,
-          error => console.error("Erro ao obter Agendamento")
-    );
-    }
-
-}
+        .subscribe((portalAgendamentoList: PortalAgendamento[]) => {
+          this.portalAgendamentos = portalAgendamentoList.filter(agendamento => !agendamento.finalizado);
+        }, error => console.error("Erro ao obter Agendamento"));
+        }
+      }

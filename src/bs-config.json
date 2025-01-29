@@ -1,0 +1,14 @@
+{
+  "server": {
+    "baseDir": "./dist/agendamento",
+    "index": "index.html"
+  },
+
+  
+    "/api": {
+      "target": "http://localhost:8080",
+      "secure": false
+    }
+  
+}
+

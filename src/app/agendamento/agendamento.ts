@@ -1,6 +1,5 @@
 export enum StatusAgendamento {
 
-ABERTO = 'ABERTO',
 PREVISAO = 'PREVISAO',
 FECHADO = 'FECHADO'
 }

@@ -6,4 +6,5 @@ export interface PortalAgendamento {
     hora: string;         
     notaFiscal?: number;  
     quantidadeVolumes: number;
+    finalizado: string;
 }
